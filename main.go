@@ -29,7 +29,10 @@ func main() {
 			switch killSignal {
 			case syscall.SIGHUP, syscall.SIGINT, syscall.SIGTERM, syscall.SIGQUIT:
 				log.Println("killed")
-				time.Sleep(5 * time.Second)
+				for i := 0; i < 10; i++ {
+					fmt.Printf("Goodbye, %dth World!\n", i)
+					time.Sleep(time.Second * 1)
+				}
 				return
 			}
 		case <-done:
