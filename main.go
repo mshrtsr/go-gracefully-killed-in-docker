@@ -16,7 +16,7 @@ func main() {
 
 	done := make(chan bool)
 	go func() {
-		for i := 0; i < 100; i++ {
+		for i := 0; i < 10; i++ {
 			fmt.Printf("Hello, %dth World!\n", i)
 			time.Sleep(time.Second * 1)
 		}
